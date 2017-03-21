@@ -1,0 +1,368 @@
+html, body {
+    height: 100%;
+    font-family: 'Special Elite', Helvetica, Verdana, Arial;
+}
+
+nav {
+  letter-spacing: 1px;
+}
+
+header {
+  padding-bottom: 30%;
+  letter-spacing: 2px;
+}
+
+#about {
+  background-color: darken($custom-brand-bg, 3%) !important;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+
+#skills {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+@media (min-width:768px){
+  header {
+      min-height: 100%;
+      margin-top: 15%;
+      overflow-y:hidden;
+  }
+  #skills {
+    min-height: 100%;
+    overflow-y:hidden;
+  }
+  #about {
+    min-height: 100%;
+    overflow-y:hidden;
+  }
+}
+@media (max-width:768px){
+    header {
+      margin-top:20%;
+    }
+}
+
+.about-box{
+  background-color: darken(#2f7411, 30%);
+  opacity: 0.7;
+  border-radius: 20px;
+  padding: 10px 30px 10px 30px;
+}
+
+.profile-box {
+  display: block;
+}
+
+.profile-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Photo section
+
+.single-project {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+
+.project-details {
+    background-color: darken($custom-brand-bg, 8%);
+    opacity: 0.9;
+    border-radius: 20px;
+    bottom: 0;
+    height: 90%;
+    left: 82%;
+    margin: auto;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    width: 98%;
+    line-height: 1.8;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.project-photo img{
+  max-width: 85%;
+  height: auto;
+  border-radius: 20px;
+}
+
+
+.single-project:hover .project-details {
+    box-shadow: 0 0 20px 0 #333;
+    -webkit-transform: translate(6px, 0);
+    transform: translate(6px, 0)
+}
+
+.project:nth-child(2n+1) .single-project:hover .project-details {
+    -webkit-transform: translate(-6px, 0);
+    transform: translate(-6px, 0)
+}
+
+@media (max-width: 1200px) {
+    .project-details {
+        position: static;
+        width: 100%;
+      }
+      .single-project {
+        text-align: center;
+      }
+}
+
+// End of Photo section
+
+.intro h2{
+  font-family: 'Special Elite';
+  margin-bottom: 36px;
+  margin: 36px auto 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 5s steps(60, end);
+}
+
+#line{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0px; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+@media (max-width: 995px) {
+  .intro h2 {
+    animation: none;
+    width: auto;
+  }
+}
+@media (max-width: 360px){
+  .intro h2 {
+    letter-spacing: none;
+    font-size: 20px;
+  }
+  .intro h1 {
+    font-size: 30px;
+    animation: none;
+    margin-top: 25%;
+  }
+}
+.intro ul {
+  overflow: auto;
+  padding-left:0;
+}
+
+.intro ul>li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.intro li>a>i {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15%;
+}
+
+.footer {
+  text-align: center;
+  min-height: 20%;
+  overflow-y:hidden;
+  padding-top: 5%;
+  color: $navbar-default-color;
+  background-color: $navbar-default-bg;
+}
+
+.footer ul {
+  overflow: auto;
+  padding-left:0;
+}
+
+.footer ul>li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.footer li>a>i {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 25px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 10%;
+}
+
+.navbar-nav .btn-default{
+
+  background-color: darken($custom-brand, 15%);
+  border-color: $custom-brand;
+  border: none;
+  color: $custom-brand;
+}
+
+#skills {
+  .btn {
+    white-space: normal;
+    padding-top: 10px;
+  }
+}
+
+.modal .btn-default{
+
+  background-color: darken($custom-brand, 15%);
+  border: none;
+  color: $custom-brand-secondary;
+  padding-top: 8px;
+  &:hover{
+  background-color: $custom-brand-bg;
+  color: $custom-brand;
+  border: 1px;
+  border-color: darken($custom-brand-bg, 15%);
+  }
+}
+
+.modal .form-control{
+  background-color: $custom-brand;
+  border-color: $custom-brand-secondary;
+}
+
+.modal input{
+  color: $custom-brand-bg;
+}
+
+.modal textarea{
+  color: $custom-brand-bg;
+}
+
+// Create placeholder mixin
+@mixin placeholder($custom-brand-secondary) {
+  &::-webkit-input-placeholder {
+    color: $custom-brand-secondary;
+  }
+  &:-moz-placeholder {
+    color: $custom-brand-secondary;
+  }
+  &::-moz-placeholder {
+    color: $custom-brand-secondary;
+  }
+  &:-ms-input-placeholder {
+    color: $custom-brand-secondary;
+  }
+}
+
+// Use placeholder mixin
+[placeholder] {
+  @include placeholder($custom-brand-secondary);
+}
+
+/* Paralax background divs */
+.parallax {
+/* The image used */
+background-image: url("../img/intro_bg-gimp-duotone-green.jpeg");
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#about.parallax {
+background-image: url("../img/about_bg-gimp-duotone-green.jpeg");
+}
+
+#skills.parallax {
+background-image: url("../img/skills_bg-gimp-duotone-green.jpeg");
+background-size: cover;
+}
+
+.skill-showcase{
+  background-color: darken($custom-brand-bg, 15%);
+  opacity: 0.8;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#submitSuccess .modal-body{
+  border-radius: 5px;
+  background-color: darken($brand-success, 10%);
+  color: darken($brand-success, 30%);
+}
+
+
+#msgSubmit.text-success {
+  color: $brand-success;
+  letter-spacing: 2px;
+  font-size: 120%;
+}
+
+#msgSubmit.text-danger {
+  color: $brand-danger;
+}
+
+.project-details p {
+  margin-bottom: 1.1em
+}
+
+.project-details a {
+  font-weight: bold;
+  color: $custom-brand-bg;
+  &:hover {
+    color: $custom-brand-secondary;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+#skills p {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#skills ul {
+  margin-bottom: 1.1em;
+  padding-left: 0.9em;
+}
+
+#skills li {
+  margin-bottom: 1.1em;
+  text-align: justify;
+  text-justify: inter-word;
+}
